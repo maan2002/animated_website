@@ -1,0 +1,279 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.6rem;
+}
+a {
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+}
+/* utilities */
+.container {
+  max-width: 85rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  height: 10rem;
+  /* background-color: chocolate; */
+}
+.hue-shift {
+  animation: hue-shift 5s infinite alternate;
+}
+/* Header */
+header {
+  /* background-color: chartreuse; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+}
+.nav {
+  height: 8rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  /* background-color: aquamarine; */
+}
+.nav-list {
+  display: flex;
+  list-style: none;
+}
+.nav-item {
+  margin-right: 5rem;
+}
+.nav-item:last-child {
+  margin-right: 0;
+}
+.nav-link {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  color: white;
+}
+.nav-link:hover {
+  opacity: 0.5;
+}
+.logo {
+  display: block;
+  width: 10rem;
+}
+
+/* Main Content  */
+.landing-page {
+  width: 100%;
+  min-height: 100vh;
+  background-image: linear-gradient(to bottom right, #384679, #283153);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+}
+.landing-page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: 100vh;
+  background-image: url("./Imagesofresponsiveanimationweb/bg-pat.png");
+  background-size: cover;
+  opacity: -4;
+  z-index: -1;
+}
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr ;
+  /* align-items: center; */
+}
+.content-details {
+  max-width: 80%;
+}
+.title {
+  font-size: 4rem;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+.paragraph {
+  color: rgb(208, 206, 214);
+  margin-bottom: 1.5rem;
+}
+.search {
+  margin-bottom: 1rem;
+}
+.search input {
+  border: none;
+  border-radius: 4rem;
+  padding: 1.5rem;
+  outline: none;
+}
+.search-bar {
+  width: 100%;
+}
+.search-btn {
+  width: 10rem;
+  background-image: linear-gradient(to right, #ff3abd, #f1c284);
+  color: white;
+  cursor: pointer;
+  margin-left: -10rem;
+}
+.search-btn:hover {
+  background-image: linear-gradient(to left, #ff3abd, #f1c284);
+}
+.sm-list {
+  display: flex;
+}
+.sm-link {
+  color: white;
+  width: 3rem;
+  height: 3rem;
+  border: 1px solid whitesmoke;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 2rem;
+}
+.sm-link:hover {
+  background-image: linear-gradient(
+    to right,
+    rgb(199, 12, 199),
+    rgb(9, 240, 240)
+  );
+}
+.image-group {
+  text-align: center;
+  position: relative;
+}
+.blob-large {
+  animation: move-up 2s infinite alternate;
+}
+.blob-bean {
+  position: absolute;
+  top: 2.5rem;
+  left: 2rem;
+  z-index: 10;
+  animation: move-down 2s infinite alternate;
+}
+.blob {
+  position: absolute;
+  z-index: -1;
+}
+.blob-1 {
+  top: -14rem;
+  left: 50%;
+  /* transform: translateX(-58%); */
+  width: 24rem;
+}
+.blob-2 {
+  top: 1rem;
+  left: -10rem;
+  height: 30rem;
+}
+.blob-3 {
+  right: 2rem;
+  bottom: -24rem;
+  width: 300px;
+  height: 340px;
+}
+.blob-4 {
+  height: 150px;
+  width: 200px;
+  left: -7rem;
+  bottom: -2rem;
+}
+/* Animation    */
+@keyframes move-up {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(2rem);
+  }
+}
+@keyframes move-down {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-2rem);
+  }
+}
+@keyframes hue-shift {
+  from {
+    filter: hue-rotate(0);
+  }
+  to {
+    filter: hue-rotate(360deg);
+  }
+}
+/* Media queries */
+@media screen and (max-width:768px) {
+  .nav{
+    align-items: center;
+  }
+  .content{
+    grid-template-columns: 1fr;
+  }
+  .blob-large{
+    top: -13rem;
+    position: absolute;
+    left: 5rem;
+    width: 25rem;
+    height: 18rem;
+  }
+  .blob-bean{
+    top: -12rem;
+    position: absolute;
+    left: 4rem;
+    width: 10rem;
+    height: 9rem;
+  }
+  .content-details{
+    order: 1;
+    max-width: 100%;
+  }
+  .title{
+    font-size: 3rem;
+    margin-top: 5rem;
+  }
+  .paragraph{
+    font-size: 1.5rem;
+  }
+  .image-group{
+    margin-top: -3rem ;
+  }
+  .search input{
+    padding: 1rem;
+  }
+  .blob-1{
+    display: none;
+  }
+  .blob-2{
+    width: 20rem;
+    height: 20rem;
+    margin-top: 5rem;
+    margin-left: -2rem;
+  }
+  .blob-3{
+    width: 20rem;
+    height: 33rem;
+  }
+  .blob-4{
+    height: 10rem;
+    width: 15rem;
+  }
+  
+}
+@media screen and (max-width:468px){
+  .nav{
+        flex-direction: column;
+  }
+}

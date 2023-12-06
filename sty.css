@@ -1,0 +1,271 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+.hue-shift{
+  animation: hue-shift 5s infinite alternate;
+
+}
+/* Header  */
+
+header{
+    height: 7rem;
+    /* background-color: darkblue; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #35416d;
+    
+    
+
+}
+
+nav{
+    /* background-color: yellow; */
+    height: 6rem;
+    width: 55rem;
+}
+    
+.logobox{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-right: 2rem; 
+   
+}
+.logo{
+    margin-top: 1.5rem;
+}
+.nav-list{
+     display: flex;
+     list-style: none;
+     margin-right: -6rem;
+     
+}
+.nav-item{
+    margin-right: 2.5rem; 
+    font-size: 0.8rem;
+    text-transform: uppercase;  
+    color: white;
+}
+.nav-item:hover{
+    opacity: 0.6;
+}
+/* Main  */
+
+.landing-page{
+    background-color: #35416d;
+    /* width: 100%;
+    /* height: 100vh;  */
+    max-height: 83vh;
+    min-height: 83vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+.content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.content-details{
+   margin-left: 15rem;
+   margin-top: 8rem;
+}
+.title{
+    font-size: 1.9rem;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+.description{
+    font-size: 1rem;
+    color: whitesmoke;
+    margin-bottom: 1rem;
+
+}
+input{
+    width: 22rem;
+    height: 3rem;
+    border-radius: 5rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+.search-btn{
+    width: 6rem;
+    height: 3rem;
+    /* padding: 1rem; */
+    border-radius: 3rem;
+    color: white;
+    background-image: linear-gradient(to right,rgb(245, 76, 169),rgb(255, 221, 68));
+    margin-left: -6rem;
+    border: violet solid 1px;
+    cursor: pointer;
+}
+.search-btn:hover{
+       background-image: linear-gradient(to left,rgb(245, 76, 169),rgb(255, 237, 71));
+}
+.sm-list{
+    /* margin: auto; */
+    display: flex;
+}
+.sm-link{
+    color: white;
+    border-radius: 50% ;
+    border: white solid 1px;
+    padding: 5px;
+    /* margin: auto; */
+    margin-right: 20px;
+    align-items: center;
+    justify-content: center;
+}
+.sm-link:hover{
+    background-image: linear-gradient(to right,rgb(233, 21, 233),rgb(21, 250, 231));
+}
+.image-group{
+  
+}
+.blob-large{
+    position: absolute;
+    left: 45rem;
+    top: 7rem;
+    width: 23rem;
+    height: 17rem;
+    animation: updown 2.5s infinite alternate;
+}
+.blob-bean{
+    position: absolute;
+    left: 45rem;
+    top: 7rem;
+    width: 10rem;
+    height: 7rem;
+    animation: up-down 2.5s infinite alternate;
+
+}
+.blob{
+    /* position: absolute; */
+
+}
+.blob-1{
+    position: absolute;
+    left: 42rem;
+    top:-10.5rem;
+    z-index: 1;
+    width: 16.5rem;
+}
+.blob-2{
+    position: absolute;
+    left: -8rem;
+    /* top: -20rem; */
+    top: -1rem;
+    height: 12rem;
+    width: 15rem;
+}
+.blob-3{
+    position: absolute;
+    left: 60rem;
+    top: 28rem;
+    width: 15rem;
+}
+.blob-4{
+    width: 10rem;
+    height: 10rem;
+    margin-top: 2rem;
+    margin-left: -4rem;
+}
+
+/* Animation */
+
+@keyframes updown {
+    from{
+        transform: translateY(0);
+    }
+    to{
+        transform: translateY(2rem);
+    }
+}
+@keyframes up-down {
+    from{
+        transform: translateY(2rem);
+    }
+    to{
+        transform: translateY(0);
+    }
+}
+
+@keyframes hue-shift {
+    from {
+      filter: hue-rotate(0);
+    }
+    to {
+      filter: hue-rotate(360deg);
+    }
+  }
+
+  /* media query */
+
+  @media screen and (max-width:768px) {
+    .nav{
+      align-items: center;
+    }
+    .content{
+      grid-template-columns: 1fr;
+    }
+    .blob-large{
+      top: -13rem;
+      position: absolute;
+      left: 5rem;
+      width: 25rem;
+      height: 18rem;
+    }
+    .blob-bean{
+      top: -12rem;
+      position: absolute;
+      left: 4rem;
+      width: 10rem;
+      height: 9rem;
+    }
+    .content-details{
+      order: 1;
+      max-width: 100%;
+    }
+    .title{
+      font-size: 3rem;
+      margin-top: 5rem;
+    }
+    .paragraph{
+      font-size: 1.5rem;
+    }
+    .image-group{
+      margin-top: -3rem ;
+    }
+    .search input{
+      padding: 1rem;
+    }
+    .blob-1{
+      display: none;
+    }
+    .blob-2{
+      width: 20rem;
+      height: 20rem;
+      margin-top: 5rem;
+      margin-left: -2rem;
+    }
+    .blob-3{
+      width: 20rem;
+      height: 33rem;
+    }
+    .blob-4{
+      height: 10rem;
+      width: 15rem;
+    }
+    
+  }
+  @media screen and (max-width:468px){
+    .nav{
+          flex-direction: column;
+    }
+  }
